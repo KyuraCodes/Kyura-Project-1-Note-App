@@ -1,12 +1,12 @@
 ```markdown
-# 📝 Kyura Project #1 — Note App  
+ 📝 Kyura Project #1 — Note App  
 
-**Note App** is a simple note-taking application built with **HTML, CSS, and JavaScript**.  
+*Note App* is a simple note-taking application built with **HTML, CSS, and JavaScript**.  
 This project is part of **Kyura Project #1 (KP #1)** to practice and improve front-end web development skills.  
 
 ---
 
-# 🚀 Features
+ 🚀 Features
 - ✏️ Add new notes  
 - 🗑️ Delete notes  
 - 💾 Auto-save with `localStorage` (notes remain after closing the browser)  
@@ -17,7 +17,7 @@ This project is part of **Kyura Project #1 (KP #1)** to practice and improve fro
 
 ---
 
-## 🖼️ Demo Preview
+ 🖼️ Demo Preview
 ```
 ![Preview Note App](screenshot.png)
 
@@ -25,7 +25,7 @@ This project is part of **Kyura Project #1 (KP #1)** to practice and improve fro
 
 ---
 
-## ⚙️ How to Run
+ ⚙️ How to Run
 1. Clone this repository:
    ```bash
    git clone https://github.com/KyuraCodes/Kyura-Project-1-Note-App.git
