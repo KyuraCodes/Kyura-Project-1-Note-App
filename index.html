@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes App - KP #1</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <h1 class="logo">Notes</h1>
+          <div class="header-actions">
+            <div class="search-container">
+              <input
+                type="text"
+                id="searchInput"
+                class="search-input"
+                placeholder="Search notes..."
+                aria-label="Search notes"
+              />
+            </div>
+            <button
+              id="newNoteBtn"
+              class="btn btn-primary"
+              aria-label="Create new note"
+            >
+              New Note
+            </button>
+            <button
+              id="exportBtn"
+              class="btn btn-secondary"
+              aria-label="Export notes"
+            >
+              Export
+            </button>
+            <input
+              type="file"
+              id="importInput"
+              accept=".json"
+              style="display: none"
+              aria-label="Import notes file"
+            />
+            <button
+              id="importBtn"
+              class="btn btn-secondary"
+              aria-label="Import notes"
+            >
+              Import
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        <div class="tabs">
+          <button
+            class="tab-btn active"
+            data-filter="all"
+            aria-label="Show all notes"
+          >
+            All <span id="allCount" class="count">0</span>
+          </button>
+          <button
+            class="tab-btn"
+            data-filter="pinned"
+            aria-label="Show pinned notes"
+          >
+            Pinned <span id="pinnedCount" class="count">0</span>
+          </button>
+          <button
+            class="tab-btn"
+            data-filter="archived"
+            aria-label="Show archived notes"
+          >
+            Archived <span id="archivedCount" class="count">0</span>
+          </button>
+        </div>
+
+        <div id="loadingSkeleton" class="loading-skeleton">
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+        </div>
+
+        <div id="notesGrid" class="notes-grid" style="display: none"></div>
+
+        <div id="emptyState" class="empty-state" style="display: none">
+          <p>No notes found. Create your first note!</p>
+        </div>
+      </div>
+    </main>
+
+    <div
+      id="modal"
+      class="modal"
+      style="display: none"
+      role="dialog"
+      aria-labelledby="modalTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="modalTitle">New Note</h2>
+          <button id="closeModalBtn" class="close-btn" aria-label="Close modal">
+            &times;
+          </button>
+        </div>
+        <form id="noteForm" class="modal-body">
+          <div class="form-group">
+            <label for="noteTitle">Title</label>
+            <input
+              type="text"
+              id="noteTitle"
+              class="form-input"
+              placeholder="Enter note title..."
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="noteContent">Content</label>
+            <textarea
+              id="noteContent"
+              class="form-textarea"
+              placeholder="Write your note here..."
+              rows="8"
+              required
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="notePinned" class="checkbox" />
+              <span class="checkmark"></span>
+              Pin this note
+            </label>
+          </div>
+          <div class="modal-actions">
+            <button type="button" id="cancelBtn" class="btn btn-secondary">
+              Cancel
+            </button>
+            <button type="submit" id="saveBtn" class="btn btn-primary">
+              Save Note
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+    <div
+      id="confirmModal"
+      class="modal"
+      style="display: none"
+      role="dialog"
+      aria-labelledby="confirmTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-content confirm-modal">
+        <div class="modal-header">
+          <h2 id="confirmTitle">Confirm Delete</h2>
+        </div>
+        <div class="modal-body">
+          <p>
+            Are you sure you want to permanently delete this note? This action
+            cannot be undone.
+          </p>
+        </div>
+        <div class="modal-actions">
+          <button id="confirmCancelBtn" class="btn btn-secondary">
+            Cancel
+          </button>
+          <button id="confirmDeleteBtn" class="btn btn-danger">Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
