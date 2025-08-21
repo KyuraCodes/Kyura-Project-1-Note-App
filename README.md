@@ -27,9 +27,7 @@ This project is part of **Kyura Project #1 (KP #1)** to practice and improve fro
 ---
 
 ## 🖼️ Demo Preview
-*(add a screenshot here once the app is running)*  
 ```
-
 ![Preview Note App](screenshot.png)
 
 ````
