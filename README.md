@@ -14,15 +14,6 @@ This project is part of **Kyura Project #1 (KP #1)** to practice and improve fro
 
 ---
 
-## 📂 Project Structure
-```
-
-/note-app
-├── index.html      # Main interface
-├── style.css       # Application styling
-└── script.js       # App logic (JavaScript)
-
-```
 
 ---
 
