@@ -6,7 +6,7 @@ This project is part of **Kyura Project #1 (KP #1)** to practice and improve fro
 
 ---
 
-## 🚀 Features
+# 🚀 Features
 - ✏️ Add new notes  
 - 🗑️ Delete notes  
 - 💾 Auto-save with `localStorage` (notes remain after closing the browser)  
